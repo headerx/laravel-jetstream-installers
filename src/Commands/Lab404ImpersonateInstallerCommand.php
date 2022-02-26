@@ -44,7 +44,7 @@ class Lab404ImpersonateInstallerCommand extends Command
             'Publish configuration of Lab404\Impersonate\ImpersonateServiceProvider?',
             function () {
                 $this->call('vendor:publish', [
-                    '--provider' => 'Lab404\Impersonate\ImpersonateServiceProvider'
+                    '--provider' => 'Lab404\Impersonate\ImpersonateServiceProvider',
                 ]);
             }
         );
@@ -63,7 +63,7 @@ class Lab404ImpersonateInstallerCommand extends Command
             }
         );
 
-  
+
         $this->askStep(
             'Add links to user menu?',
             function () {

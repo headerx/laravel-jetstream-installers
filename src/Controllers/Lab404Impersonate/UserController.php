@@ -14,8 +14,7 @@ class UserController
     public function index()
     {
         return view('jetstream-installers::lab404-impersonate.users.index', [
-            'users' => User::orderBy('name')->paginate(10)
+            'users' => User::orderBy('name')->paginate(10),
         ]);
     }
-
 }
