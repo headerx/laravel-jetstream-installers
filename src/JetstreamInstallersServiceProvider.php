@@ -24,7 +24,7 @@ class JetstreamInstallersServiceProvider extends PackageServiceProvider
             ->hasCommand(Lab404ImpersonateInstallerCommand::class);
 
 
-        $package->hasRoute('web');
+        $package->hasRoute('impersonate');
 
 
         // Register the service the package provides.
