@@ -13,7 +13,7 @@ Currently the only command/installer available is for `lab404/laravel-impersonat
 
 | Command                                  | Windows       | Mac                 | Ubuntu              | Jetstream | Laravel |
 | ---------------------------------------- | ------------- | --------------------| --------------------|---------- |----------
-| `jetstream-installers:lab404-impersonate`| :x:           | :heavy_check_mark:  | :heavy_check_mark:  | 2.x       | 8.x, 9x | 
+| `jetstream-installers:lab404-impersonate`| :x:           | :heavy_check_mark:  | :heavy_check_mark:  | 2.x       | 8.x-9x  | 
 
 ## Installation
 
