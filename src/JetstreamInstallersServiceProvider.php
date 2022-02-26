@@ -2,11 +2,10 @@
 
 namespace HeaderX\JetstreamInstallers;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use HeaderX\JetstreamInstallers\Commands\JetstreamInstallersCommand;
 use HeaderX\JetstreamInstallers\Commands\Lab404ImpersonateInstallerCommand;
 use Illuminate\Support\Facades\Blade;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class JetstreamInstallersServiceProvider extends PackageServiceProvider
 {
@@ -29,7 +28,7 @@ class JetstreamInstallersServiceProvider extends PackageServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('jetstream-installers', function ($app) {
-            return new Installer;
+            return new Installer();
         });
 
         // $this->registerBladeDirectives();
@@ -40,11 +39,8 @@ class JetstreamInstallersServiceProvider extends PackageServiceProvider
         $this->registerBladeDirectives();
     }
 
-
-
     protected function registerBladeDirectives()
     {
-
         Blade::directive('lab404impersonateinstallerlinks', function () {
             return
                 Blade::compileString(

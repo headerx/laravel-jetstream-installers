@@ -1,7 +1,6 @@
 <?php
 
 use HeaderX\JetstreamInstallers\Facades\Installer;
-use HeaderX\JetstreamInstallers\Facades\JetstreamInstallers;
 use Illuminate\Support\Str;
 
 it('should show error if file does not exist', function () {

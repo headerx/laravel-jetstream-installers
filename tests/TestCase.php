@@ -2,19 +2,18 @@
 
 namespace HeaderX\JetstreamInstallers\Tests;
 
+use HeaderX\JetstreamInstallers\JetstreamInstallersServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use HeaderX\JetstreamInstallers\JetstreamInstallersServiceProvider;
 
 class TestCase extends Orchestra
 {
-
     public $nonExistentFilePath;
 
     public $filepath;
 
     public $backupFilePath;
-    
+
     protected function setUp(): void
     {
         parent::setUp();
