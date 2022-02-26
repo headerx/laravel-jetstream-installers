@@ -23,13 +23,6 @@ You can install the package via composer:
 composer require headerx/laravel-jetstream-installers
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-jetstream-installers-migrations"
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -39,7 +32,18 @@ php artisan vendor:publish --tag="laravel-jetstream-installers-config"
 This is the contents of the published config file:
 
 ```php
+<?php
+// config for HeaderX/JetstreamInstallers
 return [
+    'lab404-impersonate' => [
+        'enabled' => env('LAB404_IMPERSONATE', false),
+        'middleware' => [
+            'web',
+            'auth:sanctum',
+            // 'can:impersonate',
+        ],
+        'route_prefix' => 'lab404-impersonate',
+    ],
 ];
 ```
 
