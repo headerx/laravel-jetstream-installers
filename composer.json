@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "headerx/laravel-jetstream-installers",
+    "description": "The missing commands to install various packages into the Jetstream skeleton",
     "keywords": [
-        ":vendor_name",
+        "headerx",
         "laravel",
-        ":package_slug"
+        "laravel-jetstream-installers"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/headerx/laravel-jetstream-installers",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "inmanturbo",
+            "email": "inman.turbo@gmail.com",
             "role": "Developer"
         }
     ],
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "HeaderX\\JetstreamInstallers\\": "src",
+            "HeaderX\\JetstreamInstallers\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "HeaderX\\JetstreamInstallers\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,15 +49,19 @@
         "test-coverage": "vendor/bin/pest --coverage"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "HeaderX\\JetstreamInstallers\\JetstreamInstallersServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "JetstreamInstallers": "HeaderX\\JetstreamInstallers\\Facades\\JetstreamInstallers"
             }
         }
     },

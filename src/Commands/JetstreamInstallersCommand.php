@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace HeaderX\JetstreamInstallers\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class JetstreamInstallersCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-jetstream-installers';
 
     public $description = 'My command';
 

@@ -1,26 +1,39 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace HeaderX\JetstreamInstallers\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use HeaderX\JetstreamInstallers\JetstreamInstallersServiceProvider;
 
 class TestCase extends Orchestra
 {
+
+    public $nonExistentFilePath;
+
+    public $filepath;
+
+    public $backupFilePath;
+    
     protected function setUp(): void
     {
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'HeaderX\\JetstreamInstallers\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        $this->nonExistentFilePath = __DIR__ . '/checks/nonexistingfile.txt';
+        $this->filepath = __DIR__ . '/checks/file.txt';
+        $this->backupFilePath = __DIR__ . '/checks/backup.txt';
+
+        file_put_contents($this->filepath, file_get_contents($this->backupFilePath));
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            JetstreamInstallersServiceProvider::class,
         ];
     }
 
@@ -29,7 +42,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_laravel-jetstream-installers_table.php.stub';
         $migration->up();
         */
     }
