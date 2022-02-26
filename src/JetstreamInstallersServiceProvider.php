@@ -23,24 +23,32 @@ class JetstreamInstallersServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasCommand(Lab404ImpersonateInstallerCommand::class);
 
-        if(config('laravel-jetstream-installers.lab404-impersonate.enabled')) {
-            $package->hasRoute('impersonate_users');
-        }
+
+        $package->hasRoute('web');
+
 
         // Register the service the package provides.
         $this->app->singleton('jetstream-installers', function ($app) {
             return new Installer;
         });
+
+        // $this->registerBladeDirectives();
     }
+
+    public function bootingPackage()
+    {
+        $this->registerBladeDirectives();
+    }
+
+
 
     protected function registerBladeDirectives()
     {
-        Blade::directive('@lab404impersonateinstallerlinks', function () {
+
+        Blade::directive('lab404impersonateinstallerlinks', function () {
             return
                 Blade::compileString(
-                    '<div class="block px-4 py-2 text-xs text-gray-400">Lumki</div>'
-
-                        . '<a href="{{ route(\'laravel-jetstream-installers.users.index\') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">'
+                    '<a href="{{ route(\'users.impersonate.index\') }}" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">'
                         . '{{ __(\'Users\') }}'
                         . '</a>'
                         . '@impersonating'

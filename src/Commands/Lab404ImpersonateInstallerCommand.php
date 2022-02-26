@@ -9,13 +9,13 @@ use Symfony\Component\Process\Process;
 
 class Lab404ImpersonateInstallerCommand extends Command
 {
-    public $signature = 'jetstream-installers:lab404-impersonate';
+    public $signature = 'jetstream-installers:lab404-impersonate {--composer=global : Absolute path to the Composer binary which should be used to install packages}';
 
     public $description = 'My command';
 
     public function handle(): int
     {
-        $this->requireComposerPackages('lab404/impersonate');
+        $this->requireComposerPackages('lab404/laravel-impersonate');
 
         // Add Trait/Use Lab404\Impersonate\Models\Impersonate; after Spatie\Permission\Traits\HasRoles
         $this->askStep(

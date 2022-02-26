@@ -11,6 +11,6 @@ class Installer extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'laravel-jetstream-installers';
+        return 'jetstream-installers';
     }
 }

@@ -6,7 +6,7 @@ return [
         'middleware' => [
             'web',
             'auth:sanctum',
-            'can:impersonate',
+            // 'can:impersonate',
         ],
         'route_prefix' => 'lab404-impersonate',
     ],
