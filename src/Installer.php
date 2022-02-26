@@ -4,7 +4,7 @@ namespace HeaderX\JetstreamInstallers;
 
 use Illuminate\Support\Str;
 
-class JetstreamInstallers
+class Installer
 {
 
     public static function insertLineAfter($path, $needle, $replace)

@@ -24,7 +24,7 @@ class JetstreamInstallersServiceProvider extends PackageServiceProvider
 
         // Register the service the package provides.
         $this->app->singleton('laravel-jetstream-installers', function ($app) {
-            return new JetstreamInstallers;
+            return new Installer;
         });
     }
 }

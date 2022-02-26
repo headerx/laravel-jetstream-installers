@@ -5,9 +5,9 @@ namespace HeaderX\JetstreamInstallers\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \HeaderX\JetstreamInstallers\JetstreamInstallers
+ * @see \HeaderX\Installer
  */
-class JetstreamInstallers extends Facade
+class Installer extends Facade
 {
     protected static function getFacadeAccessor()
     {
