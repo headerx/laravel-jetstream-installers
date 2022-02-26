@@ -9,6 +9,12 @@
 
 Currently the only command/installer available is for `lab404/laravel-impersonate`
 
+## Supported Operating Systems
+
+| Command                                  | Windows       | Mac           | Ubuntu       |
+| ---------------------------------------- | ------------- | ------------  | ------------  |
+| `jetstream-installers:lab404-impersonate`| :x:           | :heavy_check_mark:  | :heavy_check_mark:  |
+
 ## Installation
 
 You can install the package via composer:
