@@ -5,15 +5,9 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/headerx/laravel-jetstream-installers/Check%20&%20fix%20styling?label=code%20style)](https://github.com/headerx/laravel-jetstream-installers/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/headerx/laravel-jetstream-installers.svg?style=flat-square)](https://packagist.org/packages/headerx/laravel-jetstream-installers)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+## Supported packages
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-jetstream-installers.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-jetstream-installers)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+Currently the only command/installer available is for `lab404/laravel-impersonate`
 
 ## Installation
 
@@ -51,9 +45,36 @@ php artisan vendor:publish --tag="laravel-jetstream-installers-views"
 
 ## Usage
 
+### Running Commands
+
+Currently the only command available is for `lab404/laravel-impersonate`:
+```bash
+php artisan jetstream-installers:lab404-impersonate --help
+Description:
+  install lab404/laravel-impersonate into skeleton with routes and views
+
+Usage:
+  jetstream-installers:lab404-impersonate [options]
+
+Options:
+      --composer[=COMPOSER]  Absolute path to the Composer binary which should be used to install packages [default: "global"]
+  -h, --help                 Display help for the given command. When no command is given display help for the list command
+  -q, --quiet                Do not output any message
+  -V, --version              Display this application version
+      --ansi|--no-ansi       Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction       Do not ask any interactive question
+      --env[=ENV]            The environment the command should run under
+  -v|vv|vvv, --verbose       Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug 
+```
+
+### Writing Your Own Installers
+
 ```php
-$jetstreamInstallers = new HeaderX\JetstreamInstallers();
-echo $jetstreamInstallers->echoPhrase('Hello, HeaderX!');
+Installer::insertLineAfter(
+    app_path('Models/User.php'),
+    'use Laravel\\Jetstream\\HasProfilePhoto;',
+    'use Lab404\\Impersonate\Models\\Impersonate;'
+)
 ```
 
 ## Testing

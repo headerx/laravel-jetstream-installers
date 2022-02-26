@@ -11,7 +11,7 @@ class Lab404ImpersonateInstallerCommand extends Command
 {
     public $signature = 'jetstream-installers:lab404-impersonate {--composer=global : Absolute path to the Composer binary which should be used to install packages}';
 
-    public $description = 'My command';
+    public $description = 'install lab404/laravel-impersonate into skeleton with routes and views';
 
     public function handle(): int
     {
